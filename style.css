@@ -1,0 +1,39 @@
+*{
+	padding:  0;
+	margin: 0;
+	font-family: 'PT Serif', serif;
+	}
+
+#Cabeçalho{
+	height: 150px;
+	background-color: orange ;
+	padding: 20 20px;
+	color: white;
+	}
+.Menu{
+	float:right;
+	line-height: 150px;
+
+}
+.Titulo{
+	float:left;
+	line-height: 150px;
+	padding: 10px;
+}
+.Menu a{
+	color:#fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 0 10px;
+	transition: 0.5;
+}
+.Tag-Menu, .Mostrar-Menu{
+	transition: 0.5s;
+
+}
+.Menu a:hover,
+.Tag-menu:hover,
+.Mostrar-Menu:hover,{
+	color:#3498db;
+}
+
