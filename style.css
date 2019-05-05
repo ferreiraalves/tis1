@@ -5,23 +5,24 @@
 	}
 
 .Cabeçalho{
-	height: 150px;
+	height: 100px;
 	background-color: orange ;
 	padding: 0 20px;
 	color: white;
-	}
+}
 
 .Menu{
 	float:right;
-	line-height: 150px;
+	line-height: 100px;
 
 }
 
-.Titulo{
+#Titulo{
 	float:left;
-	line-height: 150px;
+	line-height: 100px;
 	padding: 10px 0px 0px 50px ;
 	font-size: 50px;
+	color: black;
 }
 
 .Menu a{
@@ -29,19 +30,21 @@
 	text-transform: uppercase;
 	text-decoration: none;
 	padding: 0 10px;
-	transition: 0.5;
+	transition: 0.5s;
+	font-size: 16px;
+	letter-spacing: 1px;
 }
 
 .Mostrar-Menu{
-	float:right;
+	float: right;
 }
 
 .Mostrar-Menu i{
-	line-height: 150px;
+	line-height: 100px;
 
 }
 
-.Esconder-Menu, .Mostrar-Menu{
+.Mostrar-Menu, .Esconder-Menu{
 	transition: 0.5s;
 	font-size: 30px;
 	cursor: pointer;
@@ -50,50 +53,45 @@
 }
 
 .Menu a:hover,
-.Esconder-Menu:hover,
-.Mostrar-Menu:hover{
+.Mostrar-Menu:hover,
+.Esconder-Menu:hover{
 	color:#3498db;
 }
 
 #check{
 	position: absolute;
-	visibility: hidden;
+	display: none;
 	z-index: -1111;
 }
-
-.Conteudo{
-	padding: 0 10px;
-}
-.Conteudo p{
-	text-align: justify;
-}
-
-@media screen and (max-width:800px) {
-	.Mostrar-Menu, .Esconder-menu{
+@media screen and (max-width: 800px) {
+	.Mostrar-Menu , .Esconder-Menu{
 		display: block;
 }
 	.Menu{
 		position: fixed;
-		height: 100vh;
 		width: 100%;
-		background-color:#333;
-		left: 0;
+		height: 100vh;
+		background: #333;
+		right: -100%;
 		top: 0;
-		text-align:center;
-		padding:80px 0;
+		left:0;
+		text-align: center;
+		padding: 80px 0;
 		line-height: normal;
-	}
+		transition: 0.7s;
+}
 	.Menu a{
 		display: block;
 		padding: 20px;
-	}
+
+}
 	.Esconder-Menu{
-		position:absolute;
+		position: absolute;
 		top: 40px;
 		right: 40px;
-	}
-	#check:checked~ .menu{
-		right:0;
+}
+	#check: checked ~ .Menu{
+		right: 0;
 
-	}
+}	
 }
