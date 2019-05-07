@@ -63,7 +63,7 @@
 	display: none;
 	z-index: -1111;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
 	.Mostrar-Menu ,.Esconder-Menu{
 		display: block;
 }
