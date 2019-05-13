@@ -2,13 +2,28 @@
 	padding:  0;
 	margin: 0;
 	font-family: 'PT Serif', serif;
+	overflow: auto;
+
 	}
+
+.Conteudo>p{
+	margin-top: -100%;
+	font-weight: normal;
+    letter-spacing: 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: 1em 0;
+    font-size: 30px;
+
+}
 
 .Cabeçalho{
 	height: 100px;
 	background-color: orange ;
 	padding: 0 20px;
 	color: white;
+	overflow: hidden;
+	width: 100%;
 }
 
 .Menu{
@@ -49,6 +64,7 @@
 	font-size: 30px;
 	cursor: pointer;
 	display: none;
+	overflow: hidden;
 
 }
 
@@ -67,7 +83,7 @@
 	display: none;
 	z-index: -1111;
 }
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 800px) {
 	.Mostrar-Menu ,.Esconder-Menu{
 		display: block;
 }
