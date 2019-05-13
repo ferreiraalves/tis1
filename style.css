@@ -6,17 +6,25 @@
 
 	}
 
-.Conteudo>p{
-	margin-top: -100%;
+.Conteudo{
 	font-weight: normal;
     letter-spacing: 0.2em;
     text-align: center;
     margin: 0;
-    padding: 1em 0;
-    font-size: 30px;
-
+    font-size: 20px; 
+    text-align: right;
 }
+.foto-banda{
 
+  float: left;
+}
+#titulo-principal{
+	letter-spacing: 0.4em;
+	font-size: 35px;
+	text-align: center;
+	padding: 20px 0 0 10px;
+	margin: 0;
+}
 .Cabeçalho{
 	height: 100px;
 	background-color: orange ;
