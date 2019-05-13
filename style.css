@@ -5,24 +5,46 @@
 	overflow: auto;
 
 	}
-
 .Conteudo{
 	font-weight: normal;
-    letter-spacing: 0.2em;
-    text-align: center;
+    letter-spacing: 0.1em;
     margin: 0;
-    font-size: 20px; 
+    font-size: 2.5vw; 
     text-align: right;
+    padding: 20px;
+    min-width: 1.0vw;
 }
-.foto-banda{
 
-  float: left;
+.foto-banda{
+  	float: left;
+  	width: 50%;
+    height: auto;
+
+}
+.foto-solista{
+	float: right;
+  	width: 50%;
+    height: auto;;
+
+}
+@media screen and (max-width: 800px){
+	.foto-solista, .foto-banda{
+		display:block;
+		min-width:50pc;
+}
+	.Conteudo{
+		text-align: center;
+		font-size: 25px;
+		display: block
+		width:auto;
+
+	}
 }
 #titulo-principal{
-	letter-spacing: 0.4em;
-	font-size: 35px;
+	letter-spacing: 0.2em;
+	font-size: 50px;
 	text-align: center;
-	padding: 20px 0 0 10px;
+	padding: 20px 0 0 20px;
 	margin: 0;
 }
 .Cabeçalho{
