@@ -41,7 +41,7 @@
 		height: auto;
 
 }
-	p{
+p{
 		overflow-x: hidden;
 }
 }
@@ -148,4 +148,20 @@
 	#check:checked ~.Menu{
 		display: none;
 }
+}
+.Sobre-Nós h1{
+	text-align: center;
+}
+.Contatos{
+	max-width: 600px;
+	margin: auto;
+	overflow:hidden;
+	padding: 0 10px;
+}
+.contact-text{
+	width: 100%;
+	display: block;
+	margin: 20px 0px;
+	box-sizing: border-box;
+	border: 0;
 }
