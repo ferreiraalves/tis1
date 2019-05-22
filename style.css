@@ -4,16 +4,15 @@
 	font-family: 'PT Serif', serif;
 	overflow: auto;
 
-	}
+}
 .Conteudo{
 	font-weight: normal;
     letter-spacing: 0.1em;
     margin: 1px;
-    font-size: 2.3vw; 
+    font-size: 2.3vw;
     text-align: right;
     padding: 20px,5px,5px,5px;
     min-width: 1.0vw;
-
 }
 
 .foto-banda{
@@ -36,8 +35,8 @@
 	.Conteudo{
 		text-align: center;
 		font-size: 25px;
-		display: block
-		width:auto;	
+		display: block;
+		width : auto;
 		height: auto;
 
 }
@@ -149,19 +148,41 @@ p{
 		display: none;
 }
 }
-.Sobre-Nós h1{
+
+.Forms{
+	padding: 40px 0;
+	margin: 20px;
+
+
+}
+.Forms h1{
 	text-align: center;
+	overflow: hidden;
 }
 .Contatos{
 	max-width: 600px;
 	margin: auto;
 	overflow:hidden;
 	padding: 0 10px;
+
 }
 .contact-text{
-	width: 100%;
 	display: block;
+	width: 100%;
 	margin: 20px 0px;
 	box-sizing: border-box;
-	border: 0;
+	padding: 20px 40px;
+	outline: none;
+	color:black;
+	transition: 0.4s;
+}
+.Contatos:focus{
+	box-shadow: 0 0 10px 4px #333333;
+}
+.contact-text:hover{
+	background:lightgray;
+}
+.Contatos>textarea{
+	height: 250px;
+	resize: none;
 }
