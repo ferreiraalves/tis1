@@ -4,7 +4,7 @@
 	font-family: 'PT Serif', serif;
 	overflow: auto;
 
-	}
+}
 .Conteudo{
 	font-weight: normal;
     letter-spacing: 0.1em;
@@ -13,7 +13,6 @@
     text-align: right;
     padding: 20px,5px,5px,5px;
     min-width: 1.0vw;
-
 }
 
 .foto-banda{
@@ -36,12 +35,17 @@
 	.Conteudo{
 		text-align: center;
 		font-size: 25px;
+<<<<<<< HEAD
 		display: block
 		width:auto;
+=======
+		display: block;
+		width : auto;
+>>>>>>> 659b0be62afd8afc8e198ad0e7de979ac51a56a5
 		height: auto;
 
 }
-	p{
+p{
 		overflow-x: hidden;
 }
 }
@@ -148,4 +152,42 @@
 	#check:checked ~.Menu{
 		display: none;
 }
+}
+
+.Forms{
+	padding: 40px 0;
+	margin: 20px;
+
+
+}
+.Forms h1{
+	text-align: center;
+	overflow: hidden;
+}
+.Contatos{
+	max-width: 600px;
+	margin: auto;
+	overflow:hidden;
+	padding: 0 10px;
+
+}
+.contact-text{
+	display: block;
+	width: 100%;
+	margin: 20px 0px;
+	box-sizing: border-box;
+	padding: 20px 40px;
+	outline: none;
+	color:black;
+	transition: 0.4s;
+}
+.Contatos:focus{
+	box-shadow: 0 0 10px 4px #333333;
+}
+.contact-text:hover{
+	background:lightgray;
+}
+.Contatos>textarea{
+	height: 250px;
+	resize: none;
 }
