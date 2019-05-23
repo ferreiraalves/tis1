@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  <div class="Cabeçalho">
+    <h1 id="Titulo">
+      <i class="fas fa-headphones"></i>
+      Monta-Bandas
+    </h1>
+    <input type = "checkbox" id = "check">
+    <label for = "check" class = "Mostrar-Menu">
+      <i class = "fas fa-bars"></i>
+    </label>
+
+    <ul class="Menu">
+      <a href="index.html">Home</a>
+      <a href="cadastro.html">Cadastro</a>
+      <a href="#">Fale conosco</a>
+      <input type = "checkbox" id = "check">
+      <label for = "check" class = "Esconder-Menu">
+        <i class = "fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+
+
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+  input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <form id="form-contato">
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Nome</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="inputNome" name="Name" placeholder="Seu nome...">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Email</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="inputEmail" name="Name" placeholder="Seu email...">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Idade</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="inputIdade" name="age" placeholder=0 min= 0>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Cidade</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="inputCidade" name="city" placeholder="Sua cidade...">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Estado</label>
+        </div>
+        <div class="col-75">
+          <select id="inputEstado" name="state">
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">instrumentos</label>
+        </div>
+        <div class="col-75" >
+          <input type="checkbox" name="instrumentos" id="inputInstrumentos" value="guitarra" > Guitarra
+          <input type="checkbox" name="instrumentos" id="inputInstrumentos" value="baixo"> Baixo
+          <input type="checkbox" name="instrumentos" id="inputInstrumentos" value="bateria"> Bateria
+          <input type="checkbox" name="instrumentos" id="inputInstrumentos" value="vocal"> Vocal<br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Estilos</label>
+        </div>
+        <div class="col-75" >
+          <input type="checkbox" name="estilos" id="inputEstilos" value="rock" > Rock
+          <input type="checkbox" name="estilos" id="inputEstilos" value="samba"> Samba
+          <input type="checkbox" name="estilos" id="inputEstilos" value="sertanojo"> Sertanejo
+          <input type="checkbox" name="estilos" id="inputEstilos" value="pop"> Pop<br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Descrição</label>
+        </div>
+        <div class="col-75">
+          <textarea id="inputDescricao" name="Descrição" placeholder="Conte mais sobre vocẽ..." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Foto</label>
+        </div>
+        <div class="col-25">
+          <input type="file" id="inputImage" name="Imagem">
+        </div><br>
+        <div class="col-50" id="pic-goes-here">
+        </div>
+      </div>
+      <div class="row">
+        <input type="button" class="btn btn-success" id="btnInsert" value="OK">
+    </form>
+  </div>
+
+
+
+  <script src="fakedb.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script>
+
+
+  let imagemcaraio = 10;
+
+  function imageHandler(e2) {
+      let store = document.getElementById('pic-goes-here');
+      store.innerHTML = '<img src="' + e2.target.result + '" style=" height: 134px" padding: 10 px>';
+      let jsonstore = e2.target.result;
+      imagemcaraio = jsonstore;
+  }
+
+  function loadimage(e1) {
+      var filename = e1.target.files[0];
+      var fr = new FileReader();
+      fr.onload = imageHandler;
+      fr.readAsDataURL(filename);
+  }
+
+
+  window.onload = function () {
+    var y = document.getElementById("inputImage");
+    y.addEventListener('change', loadimage, false);
+  }
+
+  $("#btnInsert").click(function () {
+    // Verfica se o formulário está preenchido corretamente
+    if (!$('#form-contato')[0].checkValidity()) {
+      displayMessage("Preencha o formulário corretamente.");
+      return;
+    }
+
+    // Obtem os valores dos campos do formulário
+    let campoNome = $("#inputNome").val();
+    let campoEmail = $("#inputEmail").val();
+    let campoIdade = $("#inputIdade").val();
+    let campoEstado = $("#inputEstado").val();
+    let campoCidade = $("#inputCidade").val();
+    let campoInstrumentos = [];
+    $.each($("input[name='instrumentos']:checked"), function(){
+        campoInstrumentos.push($(this).val());
+    });
+    let campoEstilos = [];
+    $.each($("input[name='estilos']:checked"), function(){
+        campoEstilos.push($(this).val());
+    });
+    let campoDescicao = $("#inputDescricao").val();
+    let campoImagem = document.getElementById("inputImage");
+    usuario = {
+      "nome": campoNome,
+      "email": campoEmail,
+      "idade": campoIdade,
+      "cidade": campoCidade,
+      "estado": campoEstado,
+      "instrumentos": campoInstrumentos,
+      "estilos": campoEstilos,
+      "descricao": campoDescicao,
+      "image_path": imagemcaraio
+    };
+    insertUsuario(usuario);
+    location.href = 'index.html';
+  });
+  </script>
+
+
+
+
+</body>
+</html>
