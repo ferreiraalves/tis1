@@ -35,13 +35,8 @@
 	.Conteudo{
 		text-align: center;
 		font-size: 25px;
-<<<<<<< HEAD
-		display: block
-		width:auto;
-=======
 		display: block;
 		width : auto;
->>>>>>> 659b0be62afd8afc8e198ad0e7de979ac51a56a5
 		height: auto;
 
 }

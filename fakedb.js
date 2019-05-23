@@ -21,7 +21,9 @@ var dbfake = {
               "rock",
               "progressivo",
               "metal"
-            ]
+            ],
+            "cidade": "Belo Horizonte",
+            "estado": "MG"
         }
     ]
 }
@@ -65,7 +67,7 @@ function parseEstilos(estilos){
 
 function exibeContatos() {
     // Remove todas as linhas do corpo da tabela
-    current_db = get_db()
+    current_db = get_db();
     $("#grid-main-user").html("");
     // Popula a tabela com os registros do banco de dados
     var i;
@@ -77,18 +79,53 @@ function exibeContatos() {
         instrumentos = parseInstrumentos(contato.instrumentos)
         //parsiona instrumentos
         $("#grid-main-user").append(`
-          <li class="w3-bar">
-            <img src="${contato.path_imagem}" class="w3-bar-item w3-circle w3-hide-small" style="width:150px; height: 134px">
+          <li class="w3-bar" onclick="goToProfile(${contato.id})">
+            <img src="${contato.path_imagem}" class="w3-bar-item w3-circle" style="width:150px; height: 134px">
             <div class="w3-bar-item">
               <span class="w3-large"><b>${contato.nome}, ${contato.idade}</b></span><br>
               <span>Instumentos: ${instrumentos} </span><br>
               <span>Estilos: ${estilos} </span><br>
-              <span>Belo Horizonte, MG</span><br>
+              <span>${contato.cidade}, ${contato.estado}</span><br>
             </div>
           </li>
         `);
     }
 }
+
+
+
+function goToProfile(id){
+  location.href = `user.html?id=${id}`;
+}
+
+
+
+function build_profile_page(){
+  urlParams = new URLSearchParams(window.location.search);
+  id = urlParams.get('id');
+  current_db = get_db();
+  user = current_db.data[id-1];
+  estilos = parseEstilos(user.estilos)
+  instrumentos = parseInstrumentos(user.instrumentos)
+
+  $("#profile-box").html("");
+  $("#profile-box").append(`
+    <div class="span2" >
+      <img src="${user.path_imagem}" class="w3-bar-item w3-circle" style="width:250px; height: 250px; display: block; margin-left: auto; margin-right: auto;"  >
+    </div>
+
+    <div class="span8">
+      <h3>${user.nome}, ${user.idade}</h3>
+      <h4>${user.cidade}, ${user.estado}</h4>
+      <h6>Email: ${user.email}</h6>
+      <h6>Descrição : ${user.descricao}</h6>
+      <h6>Instrumentos: ${instrumentos}</h6>
+      <h6>Estilos : ${estilos}</h6>
+    </div>
+  `);
+
+}
+
 function parseInstrumentosInput(instrumentos) {
   parsed = [];
   var i;
@@ -115,7 +152,9 @@ function insertUsuario(user) {
       "path_imagem": "img/img_avatar5.png",
       "instrumentos": parseInstrumentosInput(user.instrumentos),
       "estilos": user.estilos,
-      "path_imagem": user.image_path
+      "path_imagem": user.image_path,
+      "cidade": user.cidade,
+      "estado": user.estado
     };
 
     // Insere o novo objeto no array
