@@ -186,3 +186,6 @@ p{
 	height: 250px;
 	resize: none;
 }
+.containerForms1,.containerForms2{
+	padding: 20px 20px 20px 20px;
+}
