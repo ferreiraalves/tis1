@@ -187,3 +187,6 @@ p{
 .containerForms1,.containerForms2{
 	padding: 20px 20px 20px 40px;
 }
+#button-band{
+	float: right;
+}
