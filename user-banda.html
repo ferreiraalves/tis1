@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+  <!--Título e Menu para Navegação-->
+  <title>Monta Bandas</title>
+</header>
+<head>
+  <div class="Cabeçalho">
+    <h1 id="Titulo">
+      <i class="fas fa-headphones"></i>
+      Monta-Bandas
+    </h1>
+    <input type = "checkbox" id = "check">
+    <label for = "check" class = "Mostrar-Menu">
+      <i class = "fas fa-bars"></i>
+    </label>
+
+    <ul class="Menu">
+      <a href="lista.html">Home</a>
+			<a href="cadastro.html">Cadastro</a>
+			<a href="contato.html">Fale conosco</a>
+      <input type = "checkbox" id = "check">
+      <label for = "check" class = "Esconder-Menu">
+        <i class = "fas fa-times"></i>
+      </label>
+    </ul>
+  </div>
+</head>
+<body>
+  <div class="container-fluid well span6">
+    <div class="w3-container" style="padding: 2% 10%" id="profile-box">
+      <div class="span2" >
+        <img src="img/img_avatar5.png" class="w3-bar-item w3-circle" style="width:250px; height: 250px; display: block; margin-left: auto; margin-right: auto;"  >
+      </div>
+
+      <div class="span8">
+        <h3>Lucas</h3>
+        <h6>Email: MyEmail@servidor.com</h6>
+        <h6>Ubication: Colombia</h6>
+        <h6>Old: 1 Year</h6>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="fakedb-bandas.js"></script>
+<script>
+build_profile_page();
+</script>
+</html>
