@@ -174,3 +174,85 @@ span.onclick = function() {
     var modal = document.getElementById("myModal");
     modal.style.display = "none";
 }
+
+function filtrarInstrumentos(filtro, usuarios){
+  result = [];
+  for (var i = 0; i < usuarios.length; i++) {
+    for (var j = 0; j < usuarios[i].instrumentos.length; j++) {
+      if (usuarios[i].instrumentos[j].instrumento == filtro) {
+        result.push(usuarios[i]);
+      }
+    }
+  }
+  return result;
+}
+
+function filtrarEstilos(filtro, usuarios){
+  result = [];
+  for (var i = 0; i < usuarios.length; i++) {
+    for (var j = 0; j < usuarios[i].estilos.length; j++) {
+      if (usuarios[i].estilos[j] == filtro) {
+        result.push(usuarios[i]);
+      }
+    }
+  }
+  return result;
+}
+
+function filtrarEstados(filtro, usuarios){
+  result = [];
+  for (var i = 0; i < usuarios.length; i++) {
+    if (usuarios[i].estado == filtro) {
+      result.push(usuarios[i]);
+    }
+  }
+  return result;
+}
+
+function filtrarResultados(){
+  var filtroInstrumento = $("#filtroInstrumento").val();
+  var filtroEstilo = $("#filtroEstilo").val();
+  var filtroEstado = $("#filtroEstado").val();
+
+  // Remove todas as linhas do corpo da tabela
+  current_db = get_db();
+  //console.log(current_db);
+  usuarios = current_db.data
+  //console.log(usuarios);
+  if (filtroInstrumento != 'null') {
+    usuarios = filtrarInstrumentos(filtroInstrumento, usuarios);
+  }
+  if (filtroEstilo != 'null') {
+    usuarios = filtrarEstilos(filtroEstilo, usuarios);
+  }
+  if (filtroEstado != 'null') {
+    usuarios = filtrarEstados(filtroEstado, usuarios);
+  }
+  console.log(usuarios);
+
+  $("#grid-main-user").html("");
+  // Popula a tabela com os registros do banco de dados
+  var i;
+  for (i = 0; i < usuarios.length; i++) {
+
+      contato = usuarios[i];
+      //instrumentos = parseInstrumentos(contato.instrumentos);
+      estilos = parseEstilos(contato.estilos)
+      instrumentos = parseInstrumentos(contato.instrumentos)
+      //parsiona instrumentos
+      $("#grid-main-user").append(`
+        <li class="w3-bar" onclick="goToProfile(${contato.id})">
+          <img src="${contato.path_imagem}" class="w3-bar-item w3-circle" style="width:150px; height: 134px">
+          <div class="w3-bar-item">
+            <span class="w3-large"><b>${contato.nome}, ${contato.idade}</b></span><br>
+            <span>Instumentos: ${instrumentos} </span><br>
+            <span>Estilos: ${estilos} </span><br>
+            <span>${contato.cidade}, ${contato.estado}</span><br>
+          </div>
+        </li>
+      `);
+  }
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none";
+
+}
