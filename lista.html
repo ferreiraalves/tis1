@@ -45,7 +45,36 @@
 			<img src="img/banda.jpg" class="foto-banda"><br>A maneira mais simples de conectar o Mundo por meio da Música. Crie seu perfil como música ou como grupo e nós vamos ajudar a encontrar alguém do seu perfil para criarem o seu grupo.
 			<img src="img/solista.jpg" class="foto-solista"><br>Defina suas preferências por estilo, ou por experiência.<br>Se a distância é um problema ou se o horário dificulta, nosso cadastro tem a melhor maneira para te indicar o melhor grupo possível.
 	</div> -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content" id="comment_block">
+			<span class="close">&times;</span>
+			<p>Nenhum comentário encontrado</p>
+			<form class="" action="index.html" method="post">
+				Instrumento:
+				<select id="filtroInstrumento" name="instrumento">
+					<option value="null" selected>N/A</option>
+					<option value="guitarra">Guitarra</option>
+					<option value="vocal">Vocal</option>
+					<option value="bateria">Bateria</option>
+				</select>
+				Estilo:
+				<select id="filtroInstrumento" name="instrumento">
+					<option value="null" selected>N/A</option>
+					<option value="rock">Guitarra</option>
+					<option value="samba">Vocal</option>
+					<option value="sertanejo">Bateria</option>
+					<option value="pop">Bateria</option>
+				</select>
+			</form>
+		</div>
+
+	</div>
+
+
 <div class="w3-container" style="padding: 5% 10%">
+		<button onclick='open_modal()'>Filtros</button>
 	  <ul class="w3-ul w3-card-4" id="grid-main-user"></ul>
 	</div>
 

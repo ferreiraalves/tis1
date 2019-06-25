@@ -93,6 +93,10 @@ function exibeContatos() {
 }
 
 
+function open_modal(){
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
 
 function goToProfile(id){
   location.href = `user.html?id=${id}`;
@@ -162,4 +166,11 @@ function insertUsuario(user) {
 
     // Atualiza os dados no Local Storage
     localStorage.setItem('db', JSON.stringify(current_db));
+}
+
+var span = document.getElementsByClassName("close")[0];
+
+span.onclick = function() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
 }
