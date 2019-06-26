@@ -37,6 +37,66 @@
 </head>
 <body>
 	<br>
+
+
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content" id="comment_block">
+			<span class="close">&times;</span>
+			<form class="" action="index.html" method="post">
+				Procura:
+				<select id="filtroInstrumento" name="instrumentos">
+					<option value="null" selected>N/A</option>
+					<option value="guitarra">Guitarra</option>
+					<option value="vocal">Vocal</option>
+					<option value="baixo">Baixo</option>
+					<option value="bateria">Bateria</option>
+				</select>
+				Estilo:
+				<select id="filtroEstilo" name="estilos">
+					<option value="null" selected>N/A</option>
+					<option value="rock">Rock</option>
+					<option value="samba">Samba</option>
+					<option value="sertanejo">Sertanejo</option>
+					<option value="pop">Pop</option>
+				</select>
+				Estado:
+				<select id="filtroEstado" name="estados">
+					<option value="null" selected>N/A</option>
+					<option value="AC">Acre</option>
+					<option value="AL">Alagoas</option>
+					<option value="AP">Amapá</option>
+					<option value="AM">Amazonas</option>
+					<option value="BA">Bahia</option>
+					<option value="CE">Ceará</option>
+					<option value="DF">Distrito Federal</option>
+					<option value="ES">Espírito Santo</option>
+					<option value="GO">Goiás</option>
+					<option value="MA">Maranhão</option>
+					<option value="MT">Mato Grosso</option>
+					<option value="MS">Mato Grosso do Sul</option>
+					<option value="MG">Minas Gerais</option>
+					<option value="PA">Pará</option>
+					<option value="PB">Paraíba</option>
+					<option value="PR">Paraná</option>
+					<option value="PE">Pernambuco</option>
+					<option value="PI">Piauí</option>
+					<option value="RJ">Rio de Janeiro</option>
+					<option value="RN">Rio Grande do Norte</option>
+					<option value="RS">Rio Grande do Sul</option>
+					<option value="RO">Rondônia</option>
+					<option value="RR">Roraima</option>
+					<option value="SC">Santa Catarina</option>
+					<option value="SP">São Paulo</option>
+					<option value="SE">Sergipe</option>
+					<option value="TO">Tocantins</option>
+				</select>
+				<input type="button" class="btn btn-success" id="btnComment" onclick='filtrarResultados()' value="Filtrar">
+			</form>
+		</div>
+
+	</div>
 	<!-- <div class="Conteudo">
 		<p id="titulo-principal">Encontre a sua Banda</p>
 		<br>
@@ -46,6 +106,7 @@
 			<img src="img/solista.jpg" class="foto-solista"><br>Defina suas preferências por estilo, ou por experiência.<br>Se a distância é um problema ou se o horário dificulta, nosso cadastro tem a melhor maneira para te indicar o melhor grupo possível.
 	</div> -->
 <div class="w3-container" style="padding: 5% 10%">
+	<button onclick='open_modal()'>Filtros</button>
 	  <ul class="w3-ul w3-card-4" id="grid-main-user"></ul>
 	</div>
 
