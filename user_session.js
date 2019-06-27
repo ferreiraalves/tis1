@@ -146,3 +146,16 @@ function valida_acesso(email, senha) {
 function logout() {
   localStorage.setItem('current_user', JSON.stringify('null'));
 }
+
+function print_more_comments() {
+
+  current_user = check_session();
+  if (current_user) {
+    $("#mensagens").append(`
+      <br>
+      <p style="float: left">Nova mensagem: </p>
+      <input type="button" class="btn btn-success" id="btnComment" onclick='new_comment(${id})' value="+" style="float: right">
+    `);
+  }
+
+}

@@ -25,7 +25,18 @@ var dbfake = {
             ],
             "cidade": "Belo Horizonte",
             "estado": "MG",
-            "mensagens": []
+            "mensagens": [
+              {
+                'autor': 'Jonas',
+                'texto': 'ASDFGASDFASDF',
+                'imagem': 'img/polnareff.jpg'
+              },
+              {
+                'autor': 'Jonas',
+                'texto': 'ASDFGASDFASDF',
+                'imagem': 'img/polnareff.jpg'
+              },
+            ]
         }
     ]
 }
@@ -100,6 +111,7 @@ function open_modal(){
     modal.style.display = "block";
 }
 
+
 function goToProfile(id){
   location.href = `user.html?id=${id}`;
 }
@@ -127,6 +139,7 @@ function build_profile_page(){
       <h6>Descrição : ${user.descricao}</h6>
       <h6>Instrumentos: ${instrumentos}</h6>
       <h6>Estilos : ${estilos}</h6>
+      <button onclick='open_modal_mensagens(${user.id})'>Mensagens</button>
     </div>
   `);
 
@@ -257,5 +270,73 @@ function filtrarResultados(){
   }
   var modal = document.getElementById("myModal");
   modal.style.display = "none";
+
+}
+
+
+
+function open_modal_mensagens(id){
+
+
+    current_db = get_db();
+    usuarios  = current_db.data
+    usuario = usuarios[id-1]
+    if (usuario.mensagens.length > 0) {
+      $("#mensagens").html("");
+      $("#mensagens").append(`
+        <span class="close">&times;</span>
+      `);
+      for (var i = 0; i < usuario.mensagens.length; i++) {
+        mensagem = usuario.mensagens[i];
+        $("#mensagens").append(`
+          <li class="w3-bar no-fuzz">
+          <img src="${mensagem.imagem}" class="w3-bar-item w3-circle" style="width:75px; height: 60px">
+          <div class="w3-bar-item">
+            <span class="w3-large"><b>${mensagem.autor}</b></span><br>
+            <span>${mensagem.texto} </span><br>
+          </div>
+          </li>
+        `);
+        if (i< usuario.mensagens.length-1) {
+          $("#mensagens").append(`<hr>`)
+        }
+      }
+
+    }else{
+      $("#mensagens").html("");
+      $("#mensagens").append(`
+        <span class="close">&times;</span>
+        <p>Nenhum comentário encontrado</p>
+      `);
+    }
+    current_user = check_session();
+    if (current_user) {
+      $("#mensagens").append(`
+        <br>
+        <textarea id="inputMensagem" name="Descrição" placeholder="Mande uma mensagem para ${usuario.nome}..." style="width: 95%"></textarea>
+        <input type="button" class="btn btn-success" id="btnComment" onclick='nova_mensagem(${id},"${current_user.nome}", "${current_user.path_imagem}")' value="+" style="float: right">
+      `);
+    }
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+}
+
+function nova_mensagem(id, nome, imagem){
+  let campoMensagem = $("#inputMensagem").val();
+  current_db = get_db();
+  n_message = {
+    'autor': nome,
+    'texto': campoMensagem,
+    'imagem': imagem
+  }
+  current_db.data[id-1].mensagens.push(n_message)
+  localStorage.setItem('db', JSON.stringify(current_db));
+  location.href = `user.html?id=${id}`;
+  open_modal_mensagens(id);
 
 }
