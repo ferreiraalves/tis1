@@ -4,6 +4,7 @@ var dbfake = {
             "id": 1,
             "nome": "Jotaro Kujoh",
             "idade": 15,
+            "senha": "123456",
             "email": "ferreira.alves@live.com",
             "descricao": "Procuro banda focada e com gente divertida :)",
             "path_imagem": "img/jotaro.jpg",
@@ -23,7 +24,8 @@ var dbfake = {
               "metal"
             ],
             "cidade": "Belo Horizonte",
-            "estado": "MG"
+            "estado": "MG",
+            "mensagens": []
         }
     ]
 }
@@ -158,7 +160,8 @@ function insertUsuario(user) {
       "estilos": user.estilos,
       "path_imagem": user.image_path,
       "cidade": user.cidade,
-      "estado": user.estado
+      "estado": user.estado,
+      "senha": user.senha
     };
 
     // Insere o novo objeto no array

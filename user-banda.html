@@ -24,10 +24,11 @@
       <i class = "fas fa-bars"></i>
     </label>
 
-    <ul class="Menu">
+    <ul class="Menu" id="menu-superior">
       <a href="lista.html">Home</a>
 			<a href="cadastro.html">Cadastro</a>
 			<a href="contato.html">Fale conosco</a>
+      <a href="login.html">Login</a>
       <input type = "checkbox" id = "check">
       <label for = "check" class = "Esconder-Menu">
         <i class = "fas fa-times"></i>
@@ -52,7 +53,9 @@
   </div>
 </body>
 <script src="fakedb-bandas.js"></script>
+<script src="user_session.js"></script>
 <script>
 build_profile_page();
+print_menu();
 </script>
 </html>

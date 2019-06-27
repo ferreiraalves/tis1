@@ -23,11 +23,12 @@
 				<i class = "fas fa-bars"></i>
 			</label>
 
-		<ul class="Menu">
+		<ul class="Menu" id="menu-superior">
 			<a href="lista.html">Home</a>
 			<a href="lista-bandas.html">Bandas</a>
 			<a href="cadastro.html">Cadastro</a>
 			<a href="contato.html">Fale conosco</a>
+			<a href="login.html">Login</a>
 			<input type = "checkbox" id = "check">
 			<label for = "check" class = "Esconder-Menu">
 				<i class = "fas fa-times"></i>
@@ -112,6 +113,8 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 	<script src="fakedb.js"></script>
+	<script src="user_session.js"></script>
 	<script>
 			exibeContatos();
+			print_menu();
 	</script>

@@ -18,11 +18,12 @@
       <i class = "fas fa-bars"></i>
     </label>
 
-    <ul class="Menu">
+    <ul class="Menu" id="menu-superior">
       <a href="lista.html">Home</a>
       <a href="lista-bandas.html">Bandas</a>
       <a href="cadastro.html">Cadastro</a>
 			<a href="contato.html">Fale conosco</a>
+      <a href="login.html">Login</a>
       <input type = "checkbox" id = "check">
       <label for = "check" class = "Esconder-Menu">
         <i class = "fas fa-times"></i>
@@ -115,6 +116,14 @@
         </div>
         <div class="col-75">
           <input type="text" id="inputEmail" name="Name" placeholder="Seu email...">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">Senha</label>
+        </div>
+        <div class="col-75">
+          <input type="password" id="inputSenha" name="senha" placeholder="Sua senha...">
         </div>
       </div>
       <div class="row">
@@ -253,6 +262,7 @@
     // Obtem os valores dos campos do formulário
     let campoNome = $("#inputNome").val();
     let campoEmail = $("#inputEmail").val();
+    let campoSenha = $("#inputSenha").val();
     let campoIdade = $("#inputIdade").val();
     let campoEstado = $("#inputEstado").val();
     let campoCidade = $("#inputCidade").val();
@@ -275,7 +285,8 @@
       "instrumentos": campoInstrumentos,
       "estilos": campoEstilos,
       "descricao": campoDescicao,
-      "image_path": imagemcaraio
+      "image_path": imagemcaraio,
+      "senha": campoSenha
     };
     insertUsuario(usuario);
     location.href = 'lista.html';

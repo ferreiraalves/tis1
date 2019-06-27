@@ -7,6 +7,7 @@ var dbfake = {
             "email": "ferreira.alves@live.com",
             "descricao": "Procuramos gente focada e divertida :)",
             "path_imagem": "img/banda2.jpg",
+            "senha": "123456",
             "instrumentos": [
               {
                 "instrumento": "guitarra",
@@ -23,7 +24,8 @@ var dbfake = {
               "metal"
             ],
             "cidade": "Belo Horizonte",
-            "estado": "MG"
+            "estado": "MG",
+            "mensagens": []
         }
     ]
 }
@@ -158,7 +160,8 @@ function insertUsuario(user) {
       "estilos": user.estilos,
       "path_imagem": user.image_path,
       "cidade": user.cidade,
-      "estado": user.estado
+      "estado": user.estado,
+      "senha": user.senha
     };
 
     // Insere o novo objeto no array

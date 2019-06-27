@@ -18,7 +18,7 @@
       <i class = "fas fa-bars"></i>
     </label>
 
-    <ul class="Menu">
+    <ul class="Menu" id="menu-superior">
       <a href="lista.html">Home</a>
       <a href="lista-bandas.html">Bandas</a>
       <a href="cadastro.html">Cadastro</a>
@@ -103,18 +103,18 @@
     <form id="form-contato">
       <div class="row">
         <div class="col-25">
-          <label for="fname">Nome</label>
+          <label for="fname">Email</label>
         </div>
         <div class="col-75">
-          <input type="text" id="inputNome" name="Name" placeholder="Seu nome...">
+          <input type="text" id="inputLoginEmail" name="Name" placeholder="Seu email...">
         </div>
       </div>
       <div class="row">
         <div class="col-25">
-          <label for="fname">Email</label>
+          <label for="fname">Senha</label>
         </div>
         <div class="col-75">
-          <input type="text" id="inputEmail" name="Name" placeholder="Seu email...">
+          <input type="password" id="inputLoginSenha" name="Name" placeholder="Sua senha...">
         </div>
       </div>
       <div class="row">
@@ -124,16 +124,13 @@
 
 
 
-  <script src="fakedb.js"></script>
+  <!-- <script src="fakedb.js"></script> -->
+  <script src="user_session.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script>
 
 
 
-  window.onload = function () {
-    var y = document.getElementById("inputImage");
-    y.addEventListener('change', loadimage, false);
-  }
 
   $("#btnInsert").click(function () {
     // Verfica se o formulário está preenchido corretamente
@@ -143,34 +140,11 @@
     }
 
     // Obtem os valores dos campos do formulário
-    let campoNome = $("#inputNome").val();
-    let campoEmail = $("#inputEmail").val();
-    let campoIdade = $("#inputIdade").val();
-    let campoEstado = $("#inputEstado").val();
-    let campoCidade = $("#inputCidade").val();
-    let campoInstrumentos = [];
-    $.each($("input[name='instrumentos']:checked"), function(){
-        campoInstrumentos.push($(this).val());
-    });
-    let campoEstilos = [];
-    $.each($("input[name='estilos']:checked"), function(){
-        campoEstilos.push($(this).val());
-    });
-    let campoDescicao = $("#inputDescricao").val();
-    let campoImagem = document.getElementById("inputImage");
-    usuario = {
-      "nome": campoNome,
-      "email": campoEmail,
-      "idade": campoIdade,
-      "cidade": campoCidade,
-      "estado": campoEstado,
-      "instrumentos": campoInstrumentos,
-      "estilos": campoEstilos,
-      "descricao": campoDescicao,
-      "image_path": imagemcaraio
-    };
-    insertUsuario(usuario);
-    location.href = 'lista.html';
+    let campoLoginEmail = $("#inputLoginEmail").val();
+    let campoLoginSenha = $("#inputLoginSenha").val();
+    valida_acesso(campoLoginEmail, campoLoginSenha);
+
+    //location.href = 'lista.html';
   });
   </script>
 
