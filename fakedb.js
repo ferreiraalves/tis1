@@ -174,7 +174,8 @@ function insertUsuario(user) {
       "path_imagem": user.image_path,
       "cidade": user.cidade,
       "estado": user.estado,
-      "senha": user.senha
+      "senha": user.senha,
+      "mensagens": [],
     };
 
     // Insere o novo objeto no array
